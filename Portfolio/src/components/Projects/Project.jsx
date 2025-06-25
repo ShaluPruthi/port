@@ -5,6 +5,7 @@ import project1 from '../../assets/Project1.png'
 import project2 from '../../assets/login.png'
 import project3 from '../../assets/weather.png'
 import project4 from '../../assets/quiz.png'
+import project5 from '../../assets/portfolio.png'
 
 const project = [
     {
@@ -31,6 +32,12 @@ const project = [
         image:project4,
         repo:'https://github.com/ShaluPruthi/QuizApp-JS',
     },
+    {
+        title:'Portfolio',
+        description:'React, Framer Motion, Vercel',
+        image: project5,
+        repo:'',
+    }
 ]
 const container = {
     hidden: { opacity: 0},

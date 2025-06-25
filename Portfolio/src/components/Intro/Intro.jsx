@@ -19,7 +19,12 @@ const Intro = () => {
             <span>I'm <span style={color}>Shalu</span><br/>
             Full Stack Web Developer</span>
             <p className="para">I am a passionate full-stack web developer with strong expertise in web development.</p>
-            <Link><button className='btn'> <img src={btnImg} alt="" className='btnImg'/>Hire Me!</button> </Link>
+
+            <a href='/updated_resume.pdf' download="Shalu_Pruthi_Resume" target='_blank' rel='noopener noreferrer'>
+            <button className='btn'> <img src={btnImg} alt="" className='btnImg'/>
+            Hire Me!
+            </button>
+            </a>
         </div>
         
         <img src={profile} alt="" className='bg'/>
