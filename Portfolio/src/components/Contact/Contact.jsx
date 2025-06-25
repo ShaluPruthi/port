@@ -16,8 +16,13 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm('service_8oo4qwm', 'template_fxu6lpn', form.current,'IuK1Mpkt-0KQ_TRwQ',
-      )
+      emailjs.sendForm(
+      import.meta.env.REACT_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      form.current,
+      import.meta.env.REACT_APP_EMAILJS_PUBLIC_KEY
+)
+
       .then(
         (result) => {
           console.log('SUCCESS!');
