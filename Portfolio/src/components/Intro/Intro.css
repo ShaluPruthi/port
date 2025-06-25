@@ -1,0 +1,74 @@
+#intro{
+    height: calc(100vh - 4rem);
+    width: 100vw;
+    max-width: 75rem;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.bg {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  z-index: -1;
+  object-fit: cover;
+  height: 60vh;
+  width: 60vh;
+  border-radius: 50%;
+}
+
+.introContent{
+    height: 100vh;
+    width: 100vw;
+    padding: 2rem;
+    font-size: 3rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    color: rgb(241, 245, 246);
+}
+
+.hello{
+    font-size: 1.75rem;
+    font-weight: 100;
+}
+
+.name{
+    color: yellow;
+}
+
+.para{
+    font-size: medium;
+    font-weight: 150;
+}
+
+.btn{
+    background-color: white;
+    margin: 1rem 0;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+
+.btnImg{
+    object-fit: cover;
+    margin: 0 0.25rem;
+    height: 1.5rem;
+}
+@media screen and (max-width: 480px) {
+    
+    .bg {
+        right: -20vw;
+    }
+
+}

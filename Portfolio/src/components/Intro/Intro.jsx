@@ -1,0 +1,26 @@
+import React from 'react'
+import './Intro.css'
+import profile from '../../assets/profile.jpeg'
+import btnImg from '../../assets/hireme.png'
+import {Link} from 'react-router-dom';
+
+
+const Intro = () => {
+  return (
+    <section id="intro">
+        <div className="introContent">
+            <span className="hello">
+            Hello,
+            </span>
+            <span>I'm <span className="name">Shalu</span><br/>
+            Full Stack Web Developer</span>
+            <p className="para">I am a passionate full-stack web developer with strong expertise in web development.</p>
+            <Link><button className='btn'> <img src={btnImg} alt="" className='btnImg'/>Hire Me!</button> </Link>
+        </div>
+        
+        <img src={profile} alt="" className='bg'/>
+    </section>
+  )
+}
+
+export default Intro

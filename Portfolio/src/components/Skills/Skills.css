@@ -1,0 +1,75 @@
+#skills {
+  background-color: aliceblue;
+  padding: 60px 20px;
+  text-align: center;
+  margin: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.skillCard {
+  background-color: rgb(179, 209, 234);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skillCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.skillImg {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.text {
+  text-align: center;
+}
+
+.skillTitle {
+  font-size: 1.5rem;
+  color: #007BFF;
+  margin-bottom: 10px;
+}
+
+.skillDesc {
+  font-size: 1rem;
+  color: #555;
+}
+
+@media screen and (max-width: 720px){
+    .text>p{
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .text>p{
+        font-size: 3vw;
+    }
+    .skillImg{
+        height: 2.25rem;
+        width: 2.25rem;
+    }
+    .text>h2{
+        font-size: 4vw;
+    }
+}
