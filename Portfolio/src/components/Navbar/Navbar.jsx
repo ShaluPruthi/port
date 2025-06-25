@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './Navbar.css'
 import logo from '../../assets/logo.jpg' 
 import contacting from '../../assets/contacting.png'
-import {Link} from 'react-router-dom';
+import {Link} from 'react-scroll';
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -25,14 +25,16 @@ const Navbar = () => {
     <nav className={`nav ${isScrolled ? 'scrolled' : ''}`}>
         <img src={logo} alt="logo" className='logo' />
         <div className="menu">
-                <Link className='menuListItem'>Home</Link>
-                <Link className='menuListItem'>About</Link>
-                <Link className='menuListItem'>Skills</Link>
-                <Link className='menuListItem'>Projects</Link>      
+                <Link activeClass="active" to="intro" spy={true} smooth={true} offset={-100} duration={500} className='menuListItem'>Home</Link>
+                <Link activeClass="active" to="head" spy={true} smooth={true} offset={-50} duration={500} className='menuListItem'>About</Link>
+                <Link activeClass="active" to="skills" spy={true} smooth={true} offset={-50} duration={500} className='menuListItem'>Skills</Link>
+                <Link activeClass="active" to="projects" spy={true} smooth={true} offset={-50} duration={500} className='menuListItem'>Projects</Link>      
             
         </div>
 
-        <button className='menubtn'>
+        <button className='menubtn' onClick={()=>
+          document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }
+  )}>
            <img src={contacting} alt='contact' className='btnimg'/>Contact Me !
         </button>
     </nav>

@@ -52,3 +52,9 @@
     width: 2rem;
     margin: 0.5rem;
 }
+
+.active{
+    color: yellow;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow;
+}
