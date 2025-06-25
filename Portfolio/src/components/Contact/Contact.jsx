@@ -1,22 +1,46 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import './Contact.css'
 import x from '../../assets/twitter.png'
 import git from '../../assets/github.png'
 import gmail from '../../assets/gmail.png'  
 import insta from '../../assets/instagram.png'
 import linkedin from '../../assets/linkedin.png'
+import emailjs from '@emailjs/browser';
+
+emailjs.init('IuK1Mpkt-0KQ_TRwQ');
 
 const Contact = () => {
+  const form= useRef();
+
+   const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_8oo4qwm', 'template_fxu6lpn', form.current,'IuK1Mpkt-0KQ_TRwQ',
+      )
+      .then(
+        (result) => {
+          console.log('SUCCESS!');
+          alert('Message sent successfully!,', result.text);
+          e.target.reset();
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          alert(`Failed to send message: ${error.text || error}`);
+        },
+      );
+  };
+
   return (
     <section className="contactPage">
         <div id="contact">
             <h1 className="contactPageTitle">Contact Me</h1>
             <span className="contactDesc">Please fill out the form below to discuss any work opportunities.</span>
-            <form action="" className="contactForm">
-              <input type="text" className="name" placeholder='Your Name' />
-              <input type="email" className="email" placeholder='Your Email' required/>
+            <form className="contactForm" ref={form} onSubmit={sendEmail}>
+              <input type="text" className="name" placeholder='Your Name' name='from_name'/>
+              <input type="email" className="email" placeholder='Your Email' name='from_email' required/>
               <textarea className="msg" name="message" rows="5" placeholder='Your Message'></textarea>
-              <button type='submit' value="send" className="submitBtn">Submit</button>
+              <button type='submit' className="submitBtn">Submit</button>
 
               <div className="links">
                 <img src={x} alt="X" className="link" />
