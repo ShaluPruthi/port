@@ -1,19 +1,21 @@
-import React, {useState, useEffect} from 'react'
-import './Navbar.css'
-import logo from '../../assets/logo.jpg' 
-import contacting from '../../assets/contacting.png'
-import {Link} from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import './Navbar.css';
+import logo from '../../assets/logo.jpg';
+import contactImg from '../../assets/contacting.png';
+import { Link } from 'react-scroll';
 
 const Navbar = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
+  const [active, setActive] = useState('intro');
+  const [scrolled, setScrolled] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
       if (offset > 50) {
-        setIsScrolled(true);
+        setScrolled(true);
       } else {
-        setIsScrolled(false);
+        setScrolled(false);
       }
     };
 
@@ -21,24 +23,55 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const handleSetActive = (to) => {
+    setActive(to);
+    setShowMenu(false); // Close menu on link click (mobile UX)
+  };
+
   return (
-    <nav className={`nav ${isScrolled ? 'scrolled' : ''}`}>
-        <img src={logo} alt="logo" className='logo' />
-        <div className="menu">
-                <Link activeClass="active" to="intro" spy={true} smooth={true} offset={-100} duration={500} className='menuListItem'>Home</Link>
-                <Link activeClass="active" to="head" spy={true} smooth={true} offset={-50} duration={500} className='menuListItem'>About</Link>
-                <Link activeClass="active" to="skills" spy={true} smooth={true} offset={-50} duration={500} className='menuListItem'>Skills</Link>
-                <Link activeClass="active" to="projects" spy={true} smooth={true} offset={-50} duration={500} className='menuListItem'>Projects</Link>      
-            
-        </div>
+    <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
+      <img src={logo} alt="Logo" className="logo" />
 
-        <button className='menubtn' onClick={()=>
-          document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }
-  )}>
-           <img src={contacting} alt='contact' className='btnimg'/>Contact Me !
-        </button>
+      <div className="hamburger" onClick={toggleMenu}>
+        ☰
+      </div>
+
+      <div className={`menu ${showMenu ? 'show' : ''}`}>
+        {['home', 'about', 'skills', 'projects'].map((section) => (
+          <Link
+            key={section}
+            activeClass="active"
+            to={section}
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            onSetActive={handleSetActive}
+            className={`menuListItem ${active === section ? 'active' : ''}`}
+          >
+            {section.charAt(0).toUpperCase() + section.slice(1)}
+          </Link>
+        ))}
+
+        <Link
+          to="contact"
+          smooth={true}
+          duration={500}
+          offset={-70}
+          onSetActive={() => handleSetActive('contact')}
+        >
+          <button className="menubtn">
+            <img src={contactImg} alt="contact" className="btnimg" />
+            Contact Me
+          </button>
+        </Link>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

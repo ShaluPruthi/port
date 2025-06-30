@@ -1,67 +1,110 @@
-.nav{
-    height: 5rem;
-    width: 100%;
-    margin: 0 auto;
-    padding: 1rem 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: sticky;
-    top: 0;
-    z-index: 3;
-}
-.nav.scrolled .menuListItem{
-    color: #6c74cb;
-    font-weight: 600;
-}
-.logo{
-    width: 4rem;
-    height: 3rem;
-    border-radius: 50%;
-    margin-right: 1rem;
-    justify-content: right;
+.nav {
+  height: 5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: background 0.3s ease-in-out;
 }
 
-.menuListItem{ 
-    color: rgb(255, 255, 255); 
-    margin: 1rem;
-    cursor: pointer;
-}
-.menuListItem:hover{
-    color: rgb(20, 19, 19);
-    padding-bottom: 0.5 rem;
-    border-bottom: 3px solid rgb(20, 19, 19);
-    transition: all 0.3s ease-in-out;
+/* Scrolled effect */
+.nav.scrolled .menuListItem {
+  color: #6c74cb;
+  font-weight: 600;
 }
 
-.menubtn{
-    background-color: rgb(246, 244, 250);
-    color: rgb(20, 19, 19);
-    padding: 0.5rem 1rem;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    border-radius: 5rem;
-    transition: all 0.3s ease-in-out;
-    height: 3.5rem;
-} 
-
-.btnimg{
-    object-fit: cover;
-    height: 2rem;
-    width: 2rem;
-    margin: 0.5rem;
+.logo {
+  width: 4rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+  justify-content: right;
 }
 
-.active{
-    color: yellow;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid yellow;
+/* Menu styles */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
+.menuListItem {
+  color: rgb(255, 255, 255);
+  margin: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuListItem:hover {
+  color: rgb(20, 19, 19);
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid rgb(20, 19, 19);
+}
+
+.menubtn {
+  background-color: rgb(246, 244, 250);
+  color: rgb(20, 19, 19);
+  padding: 0.5rem 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 5rem;
+  transition: all 0.3s ease-in-out;
+  height: 3.5rem;
+}
+
+.btnimg {
+  object-fit: cover;
+  height: 2rem;
+  width: 2rem;
+  margin: 0.5rem;
+}
+
+.active {
+  color: yellow;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid yellow;
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive layout for smaller screens */
 @media screen and (max-width: 768px) {
-  .menuListItem {
+  .menu {
+    position: absolute;
+    top: 5rem;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem 0;
     display: none;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menuListItem {
+    display: block;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
   }
 
   .menubtn {

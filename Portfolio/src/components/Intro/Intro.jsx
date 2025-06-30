@@ -11,7 +11,7 @@ const color = {
 
 const Intro = () => {
   return (
-    <section id="intro">
+    <section id="home">
         <div className="introContent">
             <span className="hello">
             Hello,
