@@ -21,3 +21,63 @@ body{
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+  }
+
+  .menuListItem {
+    font-size: 0.9rem;
+  }
+
+  .introContent {
+    font-size: 2rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .contactForm {
+    padding: 10px;
+    width: 95vw;
+  }
+
+  .skillCard, .projectCard {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .introContent {
+    font-size: 1.5rem;
+  }
+
+  .para {
+    font-size: 0.9rem;
+  }
+
+  .btnImg {
+    height: 1rem;
+  }
+
+  .contactForm input, .contactForm textarea {
+    font-size: 0.9rem;
+  }
+
+  .skillTitle {
+    font-size: 1.2rem;
+  }
+
+  .repoBtn {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}

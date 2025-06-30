@@ -58,3 +58,19 @@
     padding-bottom: 0.5rem;
     border-bottom: 3px solid yellow;
 }
+
+@media screen and (max-width: 768px) {
+  .menuListItem {
+    display: none;
+  }
+
+  .menubtn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .btnimg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+}

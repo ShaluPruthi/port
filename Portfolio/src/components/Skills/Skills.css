@@ -55,21 +55,16 @@
   color: #555;
 }
 
-@media screen and (max-width: 720px){
-    .text>p{
-        font-size: 2vw;
-    }
-}
+@media screen and (max-width: 768px) {
+  .skillCard {
+    width: 90%;
+  }
 
-@media screen and (max-width: 480px){
-    .text>p{
-        font-size: 3vw;
-    }
-    .skillImg{
-        height: 2.25rem;
-        width: 2.25rem;
-    }
-    .text>h2{
-        font-size: 4vw;
-    }
+  .skillTitle {
+    font-size: 1.2rem;
+  }
+
+  .skillDesc {
+    font-size: 0.9rem;
+  }
 }

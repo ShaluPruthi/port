@@ -66,3 +66,23 @@
     width: 3rem;
     margin: 0 0.75rem;
 }
+
+@media screen and (max-width: 768px) {
+  .contactForm {
+    padding: 1rem;
+    width: 95%;
+  }
+
+  .name, .email, .msg {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .submitBtn {
+    padding: 0.5rem 2rem;
+  }
+
+  .links {
+    justify-content: center;
+  }
+}
