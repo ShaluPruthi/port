@@ -20,7 +20,7 @@ const Intro = () => {
             Full Stack Web Developer</span>
             <p className="para">I am a passionate full-stack web developer with strong expertise in web development.</p>
 
-            <a href='/updated_resume.pdf' download="Shalu_Pruthi_Resume" target='_blank' rel='noopener noreferrer'>
+            <a href='/Shalu_WebDeveloper.pdf' download="Shalu_Pruthi_Resume" target='_blank' rel='noopener noreferrer'>
             <button className='btn'> <img src={btnImg} alt="" className='btnImg'/>
             Hire Me!
             </button>

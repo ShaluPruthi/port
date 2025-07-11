@@ -1,4 +1,4 @@
-#contactPage{
+.contactPage{
     min-height: calc(100vh - 4rem);
     width: 100vw;
     max-width: 60rem;
@@ -8,6 +8,7 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    padding: 2rem 1rem;
 }
 
 .contactPageTitle{
@@ -35,6 +36,7 @@
     justify-content: center;
     width: 90vw;
     max-width: 90rem;
+    padding-left: 80px;
 }
 
 .name, .email, .msg{
