@@ -48,11 +48,22 @@ const Contact = () => {
               <button type='submit' className="submitBtn">Submit</button>
 
               <div className="links">
+                <a href='https://x.com/ShaluPruthi' target='_blank' rel='noopener noreferrer'>
                 <img src={x} alt="X" className="link" />
-                <img src={git} alt="github" className="link" />
-                <img src={insta} alt="instagram" className="link" />
-                <img src={linkedin} alt="linkedin" className="link" />
-                <img src={gmail} alt="gmail" className="link" />
+                </a>
+                <a href='https://github.com/ShaluPruthi' target='_blank' rel= 'noopener noreferrer'>
+                  <img src={git} alt="github" className="link" />
+                </a>
+
+                <a href='https://www.instagram.com/shalu_pruthi_11/'target='_blank' rel='noopener noreferrer'>
+                  <img src={insta} alt="instagram" className="link" />
+                </a>
+                <a href='https://www.linkedin.com/in/shalu-pruthi-12b44b252/' target='_blank' rel='noopener noreferrer'>
+                 <img src={linkedin} alt="linkedin" className="link" />
+                </a>
+                <a href='mailto: shp3467@gmail.com'>
+                  <img src={gmail} alt="gmail" className="link" />
+                </a>
               </div>
             </form>
         </div>
