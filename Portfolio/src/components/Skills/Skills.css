@@ -1,70 +1,47 @@
 #skills {
-  background-color: aliceblue;
-  padding: 60px 20px;
-  text-align: center;
-  margin: 1rem;
+  padding: 80px 10%;
+  background: #0f0f0f;
+  color: #fff;
 }
 
 .title {
+  display: block;
+  text-align: center;
   font-size: 2.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 40px;
+  color: #f0c14b;
+  margin-bottom: 50px;
 }
 
 .card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 30px;
 }
 
 .skillCard {
-  background-color: rgb(179, 209, 234);
+  background: #1a1a1a;
+  padding: 25px;
   border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 280px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  transition: 0.3s;
 }
 
 .skillCard:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(240,193,75,0.2);
 }
 
 .skillImg {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 20px;
-}
-
-.text {
-  text-align: center;
+  width: 60px;
+  margin-bottom: 15px;
 }
 
 .skillTitle {
-  font-size: 1.5rem;
-  color: #007BFF;
-  margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
 }
 
 .skillDesc {
-  font-size: 1rem;
-  color: #555;
-}
-
-@media screen and (max-width: 768px) {
-  .skillCard {
-    width: 90%;
-  }
-
-  .skillTitle {
-    font-size: 1.2rem;
-  }
-
-  .skillDesc {
-    font-size: 0.9rem;
-  }
+  color: #ccc;
+  font-size: 0.95rem;
 }

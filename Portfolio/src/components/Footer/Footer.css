@@ -1,10 +1,7 @@
-.footer{
-    width: 100vw;
-    height: 4rem;
-    background-color: rgb(40, 40, 40);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 300;
-    font-size: small;
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #121212;
+  color: #aaa;
+  font-size: 0.85rem;
 }

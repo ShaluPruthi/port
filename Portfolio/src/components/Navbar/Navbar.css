@@ -1,119 +1,84 @@
 .nav {
-  height: 5rem;
+  position: fixed;
+  top: 0;
   width: 100%;
-  margin: 0 auto;
-  padding: 1rem 1rem;
+  padding: 15px 8%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: rgba(0, 0, 0, 0.6);
-  transition: background 0.3s ease-in-out;
+  justify-content: space-between;
+  background: transparent;
+  z-index: 1000;
+  transition: 0.3s ease;
 }
 
-/* Scrolled effect */
-.nav.scrolled .menuListItem {
-  color: #6c74cb;
-  font-weight: 600;
+.nav.scrolled {
+  background: #0f0f0f;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
 .logo {
-  width: 4rem;
-  height: 3rem;
+  width: 45px;
   border-radius: 50%;
-  margin-right: 1rem;
-  justify-content: right;
 }
 
-/* Menu styles */
 .menu {
   display: flex;
+  gap: 25px;
   align-items: center;
-  gap: 1rem;
 }
 
 .menuListItem {
-  color: rgb(255, 255, 255);
-  margin: 1rem;
+  color: #ddd;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: 0.3s;
 }
 
-.menuListItem:hover {
-  color: rgb(20, 19, 19);
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid rgb(20, 19, 19);
+.menuListItem:hover,
+.menuListItem.active {
+  color: #f0c14b;
 }
 
 .menubtn {
-  background-color: rgb(246, 244, 250);
-  color: rgb(20, 19, 19);
-  padding: 0.5rem 1rem;
-  align-items: center;
-  justify-content: center;
+  background: #f0c14b;
+  color: #000;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
   display: flex;
-  border-radius: 5rem;
-  transition: all 0.3s ease-in-out;
-  height: 3.5rem;
+  align-items: center;
+  gap: 8px;
 }
 
 .btnimg {
-  object-fit: cover;
-  height: 2rem;
-  width: 2rem;
-  margin: 0.5rem;
+  width: 18px;
 }
 
-.active {
-  color: yellow;
-  padding-bottom: 0.5rem;
-  border-bottom: 3px solid yellow;
-}
-
-/* Hamburger icon */
 .hamburger {
   display: none;
-  font-size: 2rem;
-  color: white;
+  font-size: 1.8rem;
+  color: #fff;
   cursor: pointer;
 }
 
-/* Responsive layout for smaller screens */
-@media screen and (max-width: 768px) {
+/* Mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
   .menu {
     position: absolute;
-    top: 5rem;
+    top: 70px;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background: #121212;
     flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
+    width: 220px;
+    padding: 20px;
     display: none;
   }
 
   .menu.show {
     display: flex;
-  }
-
-  .menuListItem {
-    display: block;
-    margin: 1rem 0;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: block;
-  }
-
-  .menubtn {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
-
-  .btnimg {
-    height: 1.5rem;
-    width: 1.5rem;
   }
 }

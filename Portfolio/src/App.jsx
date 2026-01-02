@@ -6,6 +6,7 @@ import './style.css'
 import Skills from './components/Skills/Skills.jsx'
 import About from './components/About/About.jsx'
 import Project from './components/Projects/Project.jsx'
+import Experience from './components/Experience/Experience.jsx'
 import Contact from './components/Contact/Contact.jsx'
 import Footer from './components/Footer/Footer.jsx'
 
@@ -16,6 +17,7 @@ const App = () => {
       <Intro/>
       <About/>
       <Skills/>
+      <Experience/>
       <Project/>
       <Contact/>
       <Footer/>

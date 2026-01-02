@@ -1,102 +1,169 @@
-#projects {
-  padding: 60px 20px;
-  background: #f9f9f9;
+.projectsSection {
+  padding: 80px 0;
+  background: #0f0f0f;
+  color: #fff;
+  overflow: hidden;
+}
+
+.sectionTitle {
   text-align: center;
+  font-size: 2.6rem;
+  color: #f0c14b;
+  margin-bottom: 55px;
 }
 
-.title {
-  font-size: 2.2em;
-  margin-bottom: 10x;
-  font-weight: bold;
-  color: #333;
-}
-
-.subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  color: #666;
-}
-
-.container {
- display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px;
-  padding: 0 20px;
-
-}
-
-.imageContainer {
+/* CAROUSEL */
+.carousel {
   width: 100%;
-  height: 180px;
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-  flex-shrink: 0;
+  overflow: hidden;
 }
 
-.worksImg {
+.carouselTrack {
+  display: flex;
+  gap: 45px;
+  width: max-content;
+  animation: scroll 32s linear infinite;
+}
+
+.carousel:hover .carouselTrack {
+  animation-play-state: paused;
+}
+
+/* WRAPPER */
+.projectWrapper {
+  min-width: 300px;
+  transform: scale(0.95);
+  transition: transform 0.5s ease;
+}
+
+/* POP EFFECT */
+.projectWrapper:hover {
+  transform: scale(1.05);
+}
+
+/* IMAGE CARD */
+.projectCard {
+  position: relative;
+  height: 190px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+  border: 2px solid rgba(240, 193, 75, 0.15);
+  width: 400px;
+}
+
+/* FORCE SAME IMAGE VIEW */
+.projectCard img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover;   /* 🔥 SAME SIZE FEEL */
+  transition: transform 0.6s ease;
 }
 
-.projectCard {
- background-color: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
-  transition: transform 0.3s;
+.projectWrapper:hover .projectCard img {
+  transform: scale(1.12);
+}
+
+/* OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
   display: flex;
-  flex-direction: column;
-  width: 280px;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: 0.4s ease;
 }
 
-.projectCard:hover {
-  transform: translateY(-8px);
+.projectCard:hover .overlay {
+  opacity: 1;
 }
 
+/* PLUS BUTTON */
+.plusBtn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #000;
+  color: #f0c14b;
+  font-size: 2.2rem;
+  border: 2px solid #f0c14b;
+  cursor: pointer;
+  transition: 0.35s ease;
+}
 
+.plusBtn:hover {
+  background: #f0c14b;
+  color: #000;
+  transform: scale(1.25) rotate(90deg);
+}
+
+/* INFO */
 .projectInfo {
- padding: 15px;
-  flex: 1;
+  text-align: center;
+  margin-top: 14px;
 }
 
 .projectTitle {
+  color: #f0c14b;
   font-size: 1.1rem;
-  color: #007bff;
-  margin-bottom: 5px;
+  font-weight: 600;
 }
 
 .projectDesc {
   font-size: 0.9rem;
-  color: #444;
-  margin-bottom: 10px;
+  color: #ccc;
+  margin: 6px 0 12px;
 }
 
 .repoBtn {
   display: inline-block;
-  padding: 8px 16px;
-  background: #007bff;
-  color: white;
-  border-radius: 20px;
+  background: #f0c14b;
+  color: #000;
+  padding: 7px 20px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 500;
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .repoBtn:hover {
-  background: #0056b3;
+  background: #fff;
 }
 
-@media screen and (max-width: 768px) {
-  .projectCard {
-    width: 90%;
+/* MODAL */
+.imageModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.imageModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 18px;
+}
+
+/* ANIMATION */
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .projectWrapper {
+    min-width: 240px;
   }
 
-  .container {
-    padding: 10px;
+  .projectCard {
+    height: 155px;
   }
 }
