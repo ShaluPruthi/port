@@ -5,3 +5,18 @@
   color: #aaa;
   font-size: 0.85rem;
 }
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 6%;
+  }
+
+  h1, h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}

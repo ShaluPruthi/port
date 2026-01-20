@@ -47,13 +47,34 @@
   transform: translateY(-3px);
 }
 
-/* MOBILE */
 @media (max-width: 768px) {
   .about {
     padding: 60px 6%;
   }
 
   .aboutCard {
-    padding: 25px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .aboutSkills {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 6%;
+  }
+
+  h1, h2 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
 }
